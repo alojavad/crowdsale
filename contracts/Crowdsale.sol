@@ -2,6 +2,7 @@ pragma solidity ^0.8.18;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
+import "./RexCoin.sol";
 
 
 /**
@@ -21,6 +22,7 @@ contract Crowdsale {
 
   // The token being sold
   ERC20 public token;
+  // RexCoin public token;
 
   // Address where funds are collected
   address public  wallet;
@@ -100,7 +102,7 @@ contract Crowdsale {
 
     // update state
     weiRaised = weiRaised.add(weiAmount);
-    require(weiRaised <= cap;);
+    require(weiRaised <= cap);
 
     _processPurchase(_beneficiary, tokens);
     emit TokenPurchase(
